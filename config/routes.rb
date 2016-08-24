@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: "users/registrations"
   }
+  resources :users, only: [:show]
   get 'errors/not_found'
   get 'errors/internal_server_error'
   match "/404", :to => "errors#not_found", :via => :all
