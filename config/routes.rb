@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: "users/registrations"
   }
   get 'errors/not_found'
   get 'errors/internal_server_error'
