@@ -7,7 +7,8 @@
         <div class="alert alert-danger"><%= devise_error_messages! %></div>
       <% else %>
       <% end %>
-      <%= f.text_field :email, placeholder: "Enter you Email",class: "form-control", required: true, autofocus: true %>
+      <%= f.text_field :username, placeholder: "Enter you Username",class: "form-control", required: true, autofocus: true %>
+      <%= f.email_field :email, placeholder: "Enter you Email",class: "form-control", required: true, autofocus: true %>
       <%= f.password_field :password, placeholder: "Enter you password", class: "form-control", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
       <%= f.password_field :password_confirmation, class: "form-control", required: true %>
       <%= f.submit "Sign up", class: "btn btn-lg btn-primary btn-block" %>
