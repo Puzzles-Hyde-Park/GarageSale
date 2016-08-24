@@ -10,12 +10,11 @@
       = link_to 'Garage Sale', root_path, {:class => "navbar-brand"}
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li
-          %a{:href => "#"} Tips
-        %li
-          %a{:href => "#"} Reach Out
       %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to 'Tips', tips_path
+        %li
+          = link_to 'Reachout', reachout_path
         -if !user_signed_in?
           %li
             = link_to 'Sign Up', new_user_registration_path
@@ -24,7 +23,7 @@
             = link_to 'Log In', new_user_session_path
           - else
             %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              Hello [user]
+              = "Welcome, " + @user.email
               %span.caret
             %ul.dropdown-menu
               %li
