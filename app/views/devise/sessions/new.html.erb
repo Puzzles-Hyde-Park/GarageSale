@@ -1,18 +1,12 @@
-<div id="fullscreen_bg" class="fullscreen_bg"></div>
-  <div class="container">
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 form-signin">
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),) do |f| %>
-            <%= f.error_notification %>
-                <h1 class="form-signin-heading text-muted">Sign In</h1>
-                <%= f.input :email, required: true, class: "form-control", placeholder: "Email Address", label: false, autofocus: true %>
-                <%= f.input :password, required: true, class: "form-control", placeholder: "Password", label: false %>
-                <%= f.input :password_confirmation, required: true, class: "form-control", placeholder: "Password", label: false %>
-                <%= f.button :submit, "Login", required: true, class: "btn btn-lg btn-primary btn-block" %>
-          <% end %>
-          <%= render "devise/shared/links" %>
-        </div>
-        <div class="col-md-4"></div>
-  </div>
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+
+<div class="container">
+
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+		<h1 class="form-signin-heading text-muted">Sign In</h1>
+    <%= f.text_field :email, {class: "form-control", placeholder: "Email address", autofocus: true} %>
+		<%= f.password_field :password, {class: "form-control", placeholder: "Password", autofocus: true} %>
+		<%= f.submit "Sign In", class: "btn btn-lg btn-primary btn-block" %>
+	<% end %>
+
 </div>
