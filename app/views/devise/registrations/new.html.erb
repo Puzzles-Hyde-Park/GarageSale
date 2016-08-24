@@ -1,17 +1,13 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form-signin") do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
+  <div class="container">
+      <h1 class="form-signin-heading text-muted">Sign Up</h1>
+      <%= f.input :email, required: true, class: "form-control", placeholder: "Email Address", autofocus: true %>
+      <%= f.input :password, required: true, class: "form-control", placeholder: "Password" %>
+      <%= f.input :password_confirmation, class: "form-control", placeholder: "Password", required: true %>
+      <%= f.button :submit, "Login", required: true, class: "btn btn-lg btn-primary btn-block" %>
+    </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
