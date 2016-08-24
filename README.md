@@ -1,6 +1,7 @@
 # GarageSale
 
-#TODO
+#TODO (Vlad)
+1. Pagination / Breadcrumbs
 
 
 #Completed (Vlad)
