@@ -1,4 +1,4 @@
-<div id="fullscreen_bg" class="fullscreen_bg"></div>
+<!-- <div id="fullscreen_bg" class="fullscreen_bg"></div>
   <div class="container">
     <div class="row">
         <div class="col-md-4"></div>
@@ -14,5 +14,22 @@
           <%= render "devise/shared/links" %>
         </div>
         <div class="col-md-4"></div>
+  </div>
+</div> -->
+
+
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+  <div class="container">
+  	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <% if devise_error_messages! != "" %>
+        <div class="alert alert-danger"><%= devise_error_messages! %></div>
+      <% else %>
+      <% end %>
+      <h1 class="form-signin-heading text-muted">Sign Up</h1>
+      <%= f.text_field :email, {class: "form-control", placeholder: "Email address", autofocus: true} %>
+  		<%= f.password_field :password, {class: "form-control", placeholder: "Password", autofocus: true} %>
+      <%= f.password_field :password_confirmation, required: true, class: "form-control", placeholder: "Password" %>
+  		<%= f.submit "Sign Up", class: "btn btn-lg btn-primary btn-block", id: "sign_in_btn" %>
+    <% end %>
   </div>
 </div>
