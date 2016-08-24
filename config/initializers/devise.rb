@@ -26,6 +26,13 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
+  # for logging in with username
+  config.authentication_keys = [:login]
+
+  # for resetting password with username
+  config.reset_password_keys = [:username]
+  config.confirmation_keys = [:username]
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for

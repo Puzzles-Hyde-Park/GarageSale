@@ -9,7 +9,7 @@
       .collapse#login
         .well
           = simple_form_for(:user, url: new_user_session_path) do |f|
-            = f.text_field :email, class: "form-control", placeholder: "Enter your Email", required: true, autofocus: true
+            = f.text_field :login, class: "form-control", placeholder: "Enter you Email or Username", required: false, autofocus: true
             = f.password_field :password, class: "form-control", placeholder: "Enter your password", required: true
             = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
             = f.submit "Get Sellin'", class: "btn btn-lg btn-primary btn-block"
@@ -21,7 +21,8 @@
       .collapse#sign-up
         .well
           = simple_form_for(:user, url: user_registration_path) do |f|
-            = f.text_field :email, placeholder: "Enter your Email",class: "form-control", required: true, autofocus: true
+            = f.text_field :username, placeholder: "Enter your username",class: "form-control", required: true, autofocus: true
+            = f.email_field :email, placeholder: "Enter your Email",class: "form-control", required: true, autofocus: true
             = f.password_field :password, placeholder: "Enter your password", class: "form-control", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
             = f.password_field :password_confirmation, class: "form-control", required: true
             = f.submit "Register", class: "btn btn-lg btn-primary btn-block"
