@@ -3,10 +3,17 @@
 <div class="container">
 
 	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-		<h1 class="form-signin-heading text-muted">Sign In</h1>
+    <% if devise_error_messages! != "" %>
+      <div class="alert alert-danger"><%= devise_error_messages! %></div>
+    <% else %>
+    <% end %>
+    <h1 class="form-signin-heading text-muted">Sign In</h1>
     <%= f.text_field :email, {class: "form-control", placeholder: "Email address", autofocus: true} %>
 		<%= f.password_field :password, {class: "form-control", placeholder: "Password", autofocus: true} %>
 		<%= f.submit "Sign In", class: "btn btn-lg btn-primary btn-block", id: "sign_in_btn" %>
     <%= button_to('Register', new_user_registration_path, class: "btn btn-lg btn-primary btn-block") %>
 	<% end %>
+		<%= f.submit "Sign In", class: "btn btn-lg btn-primary btn-block" %>
+    <%= render "devise/shared/links" %>
+  <% end %>
 </div>
