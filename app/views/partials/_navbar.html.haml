@@ -7,7 +7,7 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Garage Sale', root_path, {:class => "navbar-brand"}
+      = link_to 'Garage Sale', home_path, {:class => "navbar-brand"}
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
@@ -27,7 +27,7 @@
               %span.caret
             %ul.dropdown-menu
               %li
-                %a{:href => "#"} My Account
+                = link_to 'My Account', user_path(current_user.id)
               %li
                 %a{:href => "#"} My Sales
               %li
