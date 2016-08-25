@@ -7,10 +7,12 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Garage Sale', home_path, {:class => "navbar-brand"}
+      = link_to 'Garage Sale', home_path, {:id => "brand-logo", :class => "navbar-brand"}
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      %ul.nav.navbar-nav.navbar-right
+      %ul.nav.navbar-nav.navbar-right#main-nav
+        %li
+          = button_to('Sell Something', tips_path, class: 'btn btn-success')
         %li
           = link_to 'Tips', tips_path
         %li
@@ -30,8 +32,6 @@
                 = link_to 'My Account', user_path(current_user.username)
               %li
                 %a{:href => "#"} My Sales
-              %li
-                %a{:href => "#"} New Sale
               %li.divider{:role => "separator"}
               %li
                 = link_to 'Log Out', destroy_user_session_path, {:method => :delete}
