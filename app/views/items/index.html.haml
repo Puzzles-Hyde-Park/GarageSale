@@ -1,0 +1,8 @@
+#items.transitions-enabled
+  - @items.each do |item|
+    .box.panel.panel-default
+      = link_to (image_tag item.image.url(:thumb)), item
+      .panel-body
+        %h2= link_to item.title, item
+        %p.description= @item.description
+        %p.price= @item.price

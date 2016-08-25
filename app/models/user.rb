@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   validate :validate_username
 
+  has_many :items
+
   def to_param
     username
   end

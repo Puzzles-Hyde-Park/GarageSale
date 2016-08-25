@@ -12,7 +12,7 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right#main-nav
         %li
-          = link_to('Sell Something', tips_path)
+          = link_to('Sell Something', new_item_path)
         %li
           = link_to('Friends Sales', tips_path)
         -if !user_signed_in?

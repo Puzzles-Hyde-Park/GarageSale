@@ -1,0 +1,10 @@
+.col-md-6.col-md-offset-3
+  .row
+    .panel.panel-default
+      .panel-heading
+        %h1 Edit Item Listing
+      .panel-body
+        %strong.center Current Image
+        %br/
+        = image_tag @item.image.url(:large)
+        = render 'form'

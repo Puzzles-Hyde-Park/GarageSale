@@ -1,0 +1,24 @@
+#item_show.row
+  .col-md-8.col-md-offset-2
+    .panel.panel-default
+      .panel-heading.item_image
+        = image_tag @item.image.url(:large)
+      .panel-body
+        %h1= @item.title
+        %p.description= @item.description
+        %p
+        Submitted by
+        = @item.user.email
+      .panel-footer
+        .row
+          .col-md-6
+            %p.user
+              Price
+              = @item.user.price
+          .col-md-6
+            .btn-group.pull-right
+              - if user_signed_in? && current_user == @item.user
+                = link_to "Edit", edit_item_path, class: "btn btn-default"
+                = link_to "Delete", item_path,
+                    method: :delete,
+                    data: { confirm: "Are you sure?"}, class: "btn btn-default"
