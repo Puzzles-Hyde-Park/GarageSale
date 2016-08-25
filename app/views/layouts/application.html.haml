@@ -8,8 +8,10 @@
     = csrf_meta_tags
   %body
     = render 'partials/navbar'
-    %p.notice= notice
+    - if notice
+      .alert.alert-success.text-center= notice
+    - else
     - if alert
-      .alert.alert-success.text-center= alert
-    -else
+      .alert.alert-danger.text-center= alert
+    - else
     = yield
