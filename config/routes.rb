@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
   get 'tips', to: 'pages#tips'
   get 'reachout', to: 'pages#reachout'
-  get 'home', to: 'pages#home'
+  get 'privacy', to: 'pages#privacy'
+  get 'tos', to: 'pages#tos'
 end
