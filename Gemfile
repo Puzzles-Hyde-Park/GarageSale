@@ -12,6 +12,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'simple_form'
 gem "paperclip", "~> 5.0.0"
 gem 'masonry-rails'
