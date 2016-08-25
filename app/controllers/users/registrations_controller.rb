@@ -73,13 +73,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
         end
     else
         clean_up_passwords resource
-        resource.errors.full_messages.each {|x| flash[x] = x} # Rails 4 simple way
+        resource.errors.full_messages.each do |x|
+          flash[:alert] = get_errors
+        end
         redirect_to root_path
     end
 end
 
   protected
 
+  def get_errors
+    resource.errors.full_messages.each do |x|
+      x
+    end
+  end
   def after_sign_up_path_for(resource)
     home_path # Or :prefix_to_your_route
   end

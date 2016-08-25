@@ -5,6 +5,7 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <% if devise_error_messages! != "" %>
         <div class="alert alert-danger"><%= devise_error_messages! %></div>
+        <%= resource.errors.inspect %>
       <% else %>
       <% end %>
       <%= f.text_field :username, placeholder: "Enter you Username",class: "form-control", required: true, autofocus: true %>

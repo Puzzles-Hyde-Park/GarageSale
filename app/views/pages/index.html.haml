@@ -24,9 +24,6 @@
       .collapse#sign-up
         .well
           = simple_form_for(:user, url: user_registration_path) do |f|
-            - if devise_error_messages! != ""
-              .alert.alert-danger= devise_error_messages!
-            - else
             = f.text_field :username, placeholder: "Enter your username",class: "form-control", required: true, autofocus: true
             = f.email_field :email, placeholder: "Enter your Email",class: "form-control", required: true, autofocus: true
             = f.password_field :password, placeholder: "Enter your password", class: "form-control", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
