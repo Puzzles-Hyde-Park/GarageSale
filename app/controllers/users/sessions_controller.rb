@@ -26,6 +26,6 @@ class Users::SessionsController < Devise::SessionsController
   protected
 
   def after_sign_in_path_for(resource)
-    home_path # Or :prefix_to_your_route
+    root_path # Or :prefix_to_your_route
   end
 end

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   match "/500", :to => "errors#internal_server_error", :via => :all
 
   authenticated :user do
-    root :to => "pages#home"
+    root :to => 'items#index'
   end
   unauthenticated :user do
     root 'pages#index', as: :unauthenticated_root
