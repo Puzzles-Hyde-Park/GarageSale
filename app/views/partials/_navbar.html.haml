@@ -12,11 +12,9 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right#main-nav
         %li
-          = button_to('Sell Something', tips_path, class: 'btn btn-success')
+          = link_to('Sell Something', tips_path)
         %li
-          = link_to 'Tips', tips_path
-        %li
-          = link_to 'Reachout', reachout_path
+          = link_to('Friends Sales', tips_path)
         -if !user_signed_in?
           %li
             = link_to 'Sign Up', new_user_registration_path
@@ -31,7 +29,7 @@
               %li
                 = link_to 'My Account', user_path(current_user.username)
               %li
-                %a{:href => "#"} My Sales
+                %a{:href => "#"} Tips & Safety
               %li.divider{:role => "separator"}
               %li
                 = link_to 'Log Out', destroy_user_session_path, {:method => :delete}
