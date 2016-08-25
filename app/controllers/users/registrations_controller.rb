@@ -73,9 +73,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         end
     else
         clean_up_passwords resource
-        resource.errors.full_messages.each do |x|
-          flash[:alert] = "The following error(s) prevented you from signing up: " + get_errors.to_s.gsub("[", "").gsub("]", "")
-        end
+        flash[:alert] = get_errors.join("\n\n")
         redirect_to root_path
     end
 end
@@ -87,6 +85,7 @@ end
       x
     end
   end
+
   def after_sign_up_path_for(resource)
     home_path # Or :prefix_to_your_route
   end
