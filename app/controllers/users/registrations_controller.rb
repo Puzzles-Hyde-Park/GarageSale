@@ -74,7 +74,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
         clean_up_passwords resource
         resource.errors.full_messages.each do |x|
-          flash[:alert] = get_errors
+          flash[:alert] = "The following error(s) prevented you from signing up: " + get_errors.to_s.gsub("[", "").gsub("]", "")
         end
         redirect_to root_path
     end
