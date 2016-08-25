@@ -1,8 +1,11 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, except: [:home, :index]
+  before_action :authenticate_user!, except: [:index]
 
   def index
-    render layout: "layouts/index"
+    render layout: "layouts/index" and return
+    if user_signed_in?
+      redirect_to :home_path
+    end
   end
 
   def home
