@@ -14,10 +14,8 @@
 	  h2 {
 	  	font-size: 22px;
 	  	margin: 0;
-	  	padding: 25px 10px;
-	  	a {
-				color: #474747;
-	  	}
+	  	padding: 0px;
+      color: black;
 	  }
 	  .user {
 	  	font-size: 12px;
@@ -73,4 +71,25 @@
 
 textarea {
 	min-height: 250px;
+}
+#price-button {
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+  background-color: #d9edf7;
+  :hover {
+    color: green;
+  }
+}
+#price-button a {
+  font-size: 22px;
+  color: #474747;
+  text-align: right;
+  text-decoration: none;
+  font-weight: bold;
+}
+#price-show {
+  font-size: 22px;
+  color: #474747;
+  text-decoration: none;
+  font-weight: bold;
 }

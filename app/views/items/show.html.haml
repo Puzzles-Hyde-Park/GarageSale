@@ -6,15 +6,10 @@
       .panel-body
         %h1= @item.title
         %p.description= @item.desc
-        %p
-        Submitted by
-        = @item.user.email
       .panel-footer
         .row
           .col-md-6
-            %p.user
-              Price
-              = @item.price
+            %p.user#price-show= number_to_currency(@item.price)
           .col-md-6
             .btn-group.pull-right
               - if user_signed_in? && current_user == @item.user

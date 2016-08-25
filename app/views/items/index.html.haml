@@ -1,8 +1,10 @@
 #items.transitions-enabled
   - @items.each do |item|
-    .box.panel.panel-default
-      = link_to (image_tag item.image.url(:thumb)), item
+    .box.panel.panel-info
+      .panel-heading
+        %h2= item.title
+      = link_to (image_tag item.image.url), item
       .panel-body
-        %h2= link_to item.title, item
         %p.description= item.desc
-        %p.price= item.price
+      .btn.btn-sm.btn-block#price-button
+        = link_to number_to_currency(item.price), item
