@@ -3,7 +3,7 @@
     .col-md-4.col-md-offset-4
       %h1.text-center GarageSale
       - if alert
-        .alert.alert-danger= alert
+        .alert.alert-danger= simple_format(alert, {}, wrapper_tag: "li")
       -else
   .row
     .col-md-4.col-md-offset-4
