@@ -23,5 +23,6 @@ module GarageSale
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.exceptions_app = self.routes
     config.active_record.raise_in_transactional_callbacks = true
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end

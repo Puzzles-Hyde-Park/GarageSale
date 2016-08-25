@@ -9,7 +9,7 @@
       .collapse#login
         .well
           = simple_form_for(:user, url: new_user_session_path) do |f|
-            = f.text_field :login, class: "form-control", placeholder: "Enter you Email or Username", required: false, autofocus: true
+            = f.text_field :login, class: "form-control", placeholder: "Enter your Email or Username", required: false, autofocus: true
             = f.password_field :password, class: "form-control", placeholder: "Enter your password", required: true
             = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
             = f.submit "Get Sellin'", class: "btn btn-lg btn-success btn-block"
