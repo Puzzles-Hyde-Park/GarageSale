@@ -28,7 +28,7 @@ Devise.setup do |config|
 
   # for logging in with username
   config.authentication_keys = [:login]
-
+  config.scoped_views = true
   # for resetting password with username
   config.reset_password_keys = [:username]
   config.confirmation_keys = [:username]
