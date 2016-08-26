@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions',
-    registrations: "users/registrations"
+    registrations: "users/registrations",
+    :omniauth_callbacks => "users/omniauth_callbacks"
   }
+  match 'users/auth/facebook/callback', to: 'users/sessions#create', :via => :all
+  match 'users/auth/failure', to: redirect('/'), :via => :all
   resources :users, only: [:show]
   resources :items
   get 'errors/not_found'
