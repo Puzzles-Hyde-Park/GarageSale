@@ -34,6 +34,9 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
+      user.first_name = auth.info.first_name
+      user.link = auth.info.link
+      user.photo = auth.info.picture
       user.oauth_token = auth.credentials.token
       user.email = auth.info.email
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
