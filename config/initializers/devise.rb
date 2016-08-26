@@ -33,7 +33,10 @@ Devise.setup do |config|
   config.reset_password_keys = [:username]
   config.confirmation_keys = [:username]
   # facebook
-  config.omniauth :facebook, "1771221263144586", '901ba32dc27bb134c5d0cb5960be078d', scope: 'email,public_profile', info_fields: 'name,first_name,link,picture,email'
+  config.omniauth :facebook, "1771221263144586", '901ba32dc27bb134c5d0cb5960be078d',
+  scope: 'public_profile,email',
+  info_fields: 'name,first_name,link,picture,email',
+  image_size: {:width => 165, :height => 165}
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
