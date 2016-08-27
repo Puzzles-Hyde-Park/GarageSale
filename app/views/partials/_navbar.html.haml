@@ -7,7 +7,7 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Garage Sale', root_path, {:id => "brand-logo", :class => "navbar-brand"}
+      = link_to 'GarageSale', root_path, {:id => "brand-logo", :class => "navbar-brand"}
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right#main-nav
@@ -29,7 +29,7 @@
               %li
                 = link_to 'My Account', root_path
               %li
-                %a{:href => "#"} Tips & Safety
+                = link_to 'Tips & Safety', tips_path
               %li.divider{:role => "separator"}
               %li
                 = link_to 'Log Out', destroy_user_session_path, {:method => :delete}
