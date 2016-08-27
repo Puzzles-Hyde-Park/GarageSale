@@ -17,6 +17,7 @@ gem 'omniauth-facebook'
 gem 'simple_form'
 gem "paperclip", "~> 5.0.0"
 gem 'masonry-rails'
+gem 'figaro'
 
 
 
