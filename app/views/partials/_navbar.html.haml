@@ -23,7 +23,7 @@
             = link_to 'Log In', new_user_session_path
           - else
             %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              = "Welcome Asshat"
+              = "Welcome " + current_user.first_name
               %span.caret
             %ul.dropdown-menu
               %li

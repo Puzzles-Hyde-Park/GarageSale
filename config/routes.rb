@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   unauthenticated :user do
     root 'pages#index', as: :unauthenticated_root
   end
-
+  get 'home', to: 'items#index'
   get 'tips', to: 'pages#tips'
   get 'reachout', to: 'pages#reachout'
   get 'privacy', to: 'pages#privacy'
