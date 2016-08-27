@@ -33,7 +33,8 @@ Devise.setup do |config|
   config.reset_password_keys = [:username]
   config.confirmation_keys = [:username]
   # facebook
-  config.omniauth :facebook, "1771221263144586", '901ba32dc27bb134c5d0cb5960be078d',
+
+  config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'],
   scope: 'public_profile,email',
   info_fields: 'name,first_name,link,picture,email',
   image_size: {:width => 165, :height => 165}
