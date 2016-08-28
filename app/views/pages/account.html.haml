@@ -1,0 +1,19 @@
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      .panel.panel-default
+        .panel-heading
+          %h1=current_user.name
+        .panel-body
+          = image_tag current_user.photo, id: "account-photo"
+          %h4 Store Description
+          %p
+          = current_user.store_description
+          Add route, find_user and @user to pages controller then
+          link_to "Edit", edit_user_path, class: "btn btn-default"
+        .panel-footer
+          %p
+          Delete Account Button goes here.
+          Need a find_user and @user in pages controller?
+          And a route like match 'users/:id' => 'users#destroy', :via => :delete
+          Then <%= link_to "Destroy", admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } %>
